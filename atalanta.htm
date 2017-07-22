@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			Veotax Luo - Atalanta
+		</title>
+		<link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+		<link rel="stylesheet" href="bootstrap/css/bootstrap-responsive.css">
+		<link rel="stylesheet" href="stylesheets/style.css">
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<div class="span1">
+				</div>
+				<div class="span10">
+					<div class="page-header">
+						<h1>
+							Veotax Luo
+							<small>
+								A passionate generalist
+							</small>
+						</h1>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="span1">
+				</div>
+				<div class="span10">
+					<div class="tabbable tabs-right">
+						<ul class="nav nav-tabs">
+							<li>
+								<a href="projects.htm">
+									Projects
+								</a>
+							</li>
+							<li>
+								<a href="visualvnc.htm">
+									VisualVNC
+								</a>
+							</li>
+							<li>
+								<a href="visualpsd.htm">
+									VisualPSD
+								</a>
+							</li>
+							<li>
+								<a href="visualads.htm">
+									VisualADS
+								</a>
+							</li>
+							<li>
+								<a href="penetrationtest.htm">
+									PenetrationTest
+								</a>
+							</li>
+							<li>
+								<a href="visualpcd.htm">
+									VisualPCD
+								</a>
+							</li>
+							<li class="active">
+								<a href="atalanta.htm">
+									Atalanta
+								</a>
+							</li>
+							<li>
+								<a href="vpnhelper.htm">
+									VPN Helper
+								</a>
+							</li>
+							<li>
+								<a href="hidewizard.htm">
+									Hidewizard Crack
+								</a>
+							</li>
+						</ul>
+						<div class="tab-content">
+							<p class="lead">
+								II. Open-source Projects
+							</p>
+							<h4>
+								6. Atalanta
+							</h4>
+							<h5>
+								<a href="projects.htm">
+									Back
+								</a>
+							</h5>
+							<p>
+								Dec 2012 - Present
+							</p>
+							<p>
+								Tsinghua University, School of Software
+							</p>
+							<p>
+								<b>Project Description:</b>
+								During the internship in School of Software in Tsinghua University, I work in the laboratory of micro-electronics and my mentor is Prof. Dong Xiang. My work focused on Atalanta, an open source ATPG tool and fault simulator for combinational circuits. We need to improve its test compression rate by furnishing it with more functionality such as influence cone analysis, selective static compression and so on.
+							</p>
+							<p>
+								<b>Responsibility:</b>
+								In charge of management and improvement of the Atalanta source code, including removing the bugs in Atalanta and helping with experiments written in the Prof. Xiang¡¯s paper.
+							</p>
+							<p>
+								<b>Introduction:</b>
+								Our Atalanta is a modified ATPG (Automatic Test Pattern Generation) tool and fault simulator, orginally from <a href="http://www.vtvt.ece.vt.edu/vlsidesign">VirginiaTech University</a> 
+								. Our first step is to add the influence cone analysis to Atalanta. For each fault f which needs detection, generate 
+								its test pattern p. We select a randome fault subset F1 from the fault set which needs detection F. The size of F1 is max(1000, F). Then for each fault in 
+								F1, we use the following method to analyze forward and backward:
+								<br><br>Step 1. Justify Procedure
+								<br>i. Under condition of output(AND) = 1 or output(OR) = 0, for each input of the gate, check whether there's conflict between this value and already assigned 
+								value of the pattern. If there's conflict, call justify function recursely for this input. If not, just assign a value for the input at will.
+								<br>ii. Under condition of output(AND) = 0 or output(OR) = 1, for the input with the lowest measure, check whether there's conflict between this value and already 
+								assigned value of the pattern. If there's conflict, check the input with the second lowest measure. The rest can be done in the same manner. If every input 
+								occurs conflict, then find the input with the lowest measure and call justify function recursely.
+								<br><br>Step 2. Propagate Procedure
+								<br>Propagate the output of faults forwardly, during the propagation neibor input is not justfied. if the output of fault could be propagated to primary output, then we could say that the fault can be compressed into the existing pattern.
+								<br><br>Step 3. Determine Procedure
+								<br>Eventually when primary inputs are finished with justifying, if the justified value ressembles the previously assigned one, then no conflict occurs, if not, we can say that this fault cannot be compressed into the existing pattern.
+							</p>
+							<p>
+								<b>Languages used by Atalanta are:</b>
+								<br>C/C++
+							</p>
+							<p>
+								<b>Techniques used by Atalanta are:</b>
+								<br>Linux C/C++
+							</p>
+							<p>
+								<b>Useful links:</b>
+								<br>Download source from GitHub
+								<br><a href="https://github.com/hsluoyz/Atalanta">https://github.com/hsluoyz/Atalanta</a>
+								<br>Atalanta official website
+								<br><a href="http://www.mics.ece.vt.edu/ICDesign/CADTools/Overview/index.html">http://www.mics.ece.vt.edu/ICDesign/CADTools/Overview/index.html</a>
+								<br>Atalanta-M 2.0 website
+								<br><a href="http://service.felk.cvut.cz/vlsi/prj/Atalanta-M">http://service.felk.cvut.cz/vlsi/prj/Atalanta-M</a>
+							</p>
+							<b>Pictures:</b>
+							<div align="center">
+							<br><img src="img/atalanta_testgen.png"></img>
+							<br><br>Fig.1. The call graph of the test generation function.
+							<br><br><br><br><img src="img/atalanta_compact.png"></img>
+							<br><br>Fig.2. The call graph of the test compaction function.
+							<br><br><br><br><img src="img/atalanta_performance.png"></img>
+							<br><br>Fig.3. The performance of the proposed method.
+							<br><br><br><br><img src="img/atalanta_before.png"></img>
+							<br><br>Fig.4. The s9234tc output before dynamic test compaction method based on Influence Cone Analysis.
+							<br><br><br><br><img src="img/atalanta_after.png"></img>
+							<br><br>Fig.5. The s9234tc output after dynamic test compaction method based on Influence Cone Analysis.
+							</div>
+							<h5>
+								<a href="projects.htm">
+									Back
+								</a>
+							</h5>
+						</div>
+					</div>
+				</div>
+				<div class="span1">
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="span1">
+				</div>
+				<div class="span10">
+					<div class="footer">
+						<p class="text-left">
+							Copyright 2013. Veotax Luo / veotax.com
+						</p>
+					</div>
+				</div>
+				<div class="span1">
+				</div>
+			</div>
+		</div>
+	</body>
+
+</html>

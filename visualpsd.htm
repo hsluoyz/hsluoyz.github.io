@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			Veotax Luo - VisualPSD
+		</title>
+		<link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+		<link rel="stylesheet" href="bootstrap/css/bootstrap-responsive.css">
+		<link rel="stylesheet" href="stylesheets/style.css">
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<div class="span1">
+				</div>
+				<div class="span10">
+					<div class="page-header">
+						<h1>
+							Veotax Luo
+							<small>
+								A passionate generalist
+							</small>
+						</h1>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="span1">
+				</div>
+				<div class="span10">
+					<div class="tabbable tabs-right">
+						<ul class="nav nav-tabs">
+							<li>
+								<a href="projects.htm">
+									Projects
+								</a>
+							</li>
+							<li>
+								<a href="visualvnc.htm">
+									VisualVNC
+								</a>
+							</li>
+							<li class="active">
+								<a href="visualpsd.htm">
+									VisualPSD
+								</a>
+							</li>
+							<li>
+								<a href="visualads.htm">
+									VisualADS
+								</a>
+							</li>
+							<li>
+								<a href="penetrationtest.htm">
+									PenetrationTest
+								</a>
+							</li>
+							<li>
+								<a href="visualpcd.htm">
+									VisualPCD
+								</a>
+							</li>
+							<li>
+								<a href="atalanta.htm">
+									Atalanta
+								</a>
+							</li>
+							<li>
+								<a href="vpnhelper.htm">
+									VPN Helper
+								</a>
+							</li>
+							<li>
+								<a href="hidewizard.htm">
+									Hidewizard Crack
+								</a>
+							</li>
+						</ul>
+						<div class="tab-content">
+							<p class="lead">
+								I. Research & Engineering Projects
+							</p>
+							<h4>
+								2. VisualPSD
+							</h4>
+							<h5>
+								<a href="projects.htm">
+									Back
+								</a>
+							</h5>
+							<p>
+								Jul 2012 - Dec 2012
+							</p>
+							<p>
+								BUAA, Key Laboratory of Beijing Network Technology
+							</p>
+							<p>
+								<b>Project Description:</b>
+								VisualPSD aims to capture the packets received by the current machine and analyze whether there's malicious code mixed in them. The hackers usually utilize the delicately contructed packet to send to the vulnerable machines and the code the malicious packet is going to execute is called shellcode. So if we detect the shellcode contained in a packet, we are able to protect the host from the network attacks no matter whether the host is vulnerable or not.
+							</p>
+							<p>
+								<b>Responsibility:</b>
+								I am responsible for all the design and programming work of VisualPSD.
+							</p>
+							<p>
+								<b>Introduction:</b>
+								VisualPSD stands for VISUAL Packet Shellcode Detection system. Its main purpose is to capture the packets received by the current machine and analyze whether there's malicious code mixed in them. The hackers usually utilize the delicately contructed packet to send to the vulnerable machines and the code the malicious packet is going to execute is called shellcode. So if we detect the shellcode contained in a packet, we are able to protect the host from the network attacks no matter whether the host is vulnerable or not. VisualPSD uses WinPcap to capture the packets received by the host and BeaEngine to disassemble the packet bytes. Then we proposed a static and dynamic mixed approach for shellcode detection. For details see our paper, it's have been submitted to a EI journal.
+							</p>
+							<p>
+								<b>Languages used by VisualPSD are:</b>
+								<br>C/C++
+							</p>
+							<p>
+								<b>Techniques used by VisualPSD are:</b>
+								<br>MFC for UI
+								<br>BCGControlBar for UI
+								<br>WinPcap for packet capturing
+								<br>BeaEngine for disassembling
+							</p>
+							<p>
+								<b>Usage:</b>
+								<br>1) Install WinPcap before using VisualPSD.
+								<br>2) Copy VisualPSD.exe from the "Debug" directory to the "dlls" directory, then execute it.
+								<br>3) Click the "List NICs" button to list all the adpaters in the "Output" window, remember the "NIC WinPcap Index" is the ID of an adapter.
+								<br>4) Fill in the "Source NIC" edit box with the ID of adapter which you want to capture. If you also fill an ID in the "Destination NIC", the packets from Source NIC will be redirected to the Destination NIC after handling.
+								<br>5) Clicking "Capture" will trigger the WinPcap to start capture packets. Then click "Stop" will stop the capturing and "Clear" will clear the information displayed in UI. If you click "Capture & Disassemble" button instead of "Capture", the disassemble function will also start besides the capture function. The disassembly code will be displayed in the client area of VisualPSD.
+							</p>
+							<p>
+								<b>Useful links:</b>
+								<br>Download source from GitHub
+								<br><a href="https://github.com/hsluoyz/VisualPSD">https://github.com/hsluoyz/VisualPSD</a>
+								<br>BCGControlBar official website
+								<br><a href="http://www.bcgsoft.com">http://www.bcgsoft.com</a>
+								<br>WinPcap official website
+								<br><a href="http://www.winpcap.org">http://www.winpcap.org</a>
+								<br>BeaEngine official website
+								<br><a href="http://www.beaengine.org">http://www.beaengine.org</a>
+							</p>
+							<b>Pictures:</b>
+							<div align="center">
+							<br><img src="img/visualpsd_structure.png"></img>
+							<br><br>Fig.1. The structure of polymorphic shellcode.
+							<br><br><br><br><img src="img/visualpsd_getpc1.png"></img>
+							<br><br>Fig.2. The Flush GetPC Method before flushing.
+							<br><br><br><br><img src="img/visualpsd_getpc2.png"></img>
+							<br><br>Fig.3. The Flush GetPC Method after flushing.
+							<br><br><br><br><img src="img/visualpsd_disassembly.png"></img>
+							<br><br>Fig.4. The Linux-x86 /bin/sh null-free polymorphic shellcode disassembled result.
+							<br><br><br><br><img src="img/visualpsd_algo.png"></img>
+							<br><br>Fig.5. The algorithm of calculating weighted pathes.
+							<br><br><br><br><img src="img/visualpsd_fsm.png"></img>
+							<br><br>Fig.6. The Finite state machine of DVM method.
+							<br><br><br><br><img src="img/visualpsd_level.png"></img>
+							<br><br>Fig.7. The structure of a 3-level polymorphic shellcode.
+							<br><br><br><br><img src="img/visualpsd_chain.png"></img>
+							<br><br>Fig.8. The Define-Use chains in basic blocks.
+							<br><br><br><br><img src="img/visualpsd_topo.png"></img>
+							<br><br>Fig.9. The simulation network for shellcode detection.
+							<br><br><br><br><img src="img/visualpsd_ui.png"></img>
+							<br><br>Fig.10. The main UI of VisualPSD.
+							</div>
+							<h5>
+								<a href="projects.htm">
+									Back
+								</a>
+							</h5>
+						</div>
+					</div>
+				</div>
+				<div class="span1">
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="span1">
+				</div>
+				<div class="span10">
+					<div class="footer">
+						<p class="text-left">
+							Copyright 2013. Veotax Luo / veotax.com
+						</p>
+					</div>
+				</div>
+				<div class="span1">
+				</div>
+			</div>
+		</div>
+	</body>
+
+</html>

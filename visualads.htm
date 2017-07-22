@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			Veotax Luo - VisualADS
+		</title>
+		<link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+		<link rel="stylesheet" href="bootstrap/css/bootstrap-responsive.css">
+		<link rel="stylesheet" href="stylesheets/style.css">
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<div class="span1">
+				</div>
+				<div class="span10">
+					<div class="page-header">
+						<h1>
+							Veotax Luo
+							<small>
+								A passionate generalist
+							</small>
+						</h1>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="span1">
+				</div>
+				<div class="span10">
+					<div class="tabbable tabs-right">
+						<ul class="nav nav-tabs">
+							<li>
+								<a href="projects.htm">
+									Projects
+								</a>
+							</li>
+							<li>
+								<a href="visualvnc.htm">
+									VisualVNC
+								</a>
+							</li>
+							<li>
+								<a href="visualpsd.htm">
+									VisualPSD
+								</a>
+							</li>
+							<li class="active">
+								<a href="visualads.htm">
+									VisualADS
+								</a>
+							</li>
+							<li>
+								<a href="penetrationtest.htm">
+									PenetrationTest
+								</a>
+							</li>
+							<li>
+								<a href="visualpcd.htm">
+									VisualPCD
+								</a>
+							</li>
+							<li>
+								<a href="atalanta.htm">
+									Atalanta
+								</a>
+							</li>
+							<li>
+								<a href="vpnhelper.htm">
+									VPN Helper
+								</a>
+							</li>
+							<li>
+								<a href="hidewizard.htm">
+									Hidewizard Crack
+								</a>
+							</li>
+						</ul>
+						<div class="tab-content">
+							<p class="lead">
+								I. Research & Engineering Projects
+							</p>
+							<h4>
+								3. VisualADS
+							</h4>
+							<h5>
+								<a href="projects.htm">
+									Back
+								</a>
+							</h5>
+							<p>
+								Jan 2012 - Present
+							</p>
+							<p>
+								BUAA, Key Laboratory of Beijing Network Technology
+							</p>
+							<p>
+								<b>Project Description:</b>
+								The project mainly researched on RBAC policy conflict analyzing technique in Microsoft Active Directory surroundings. We have achieved automatic extraction of users, groups, shared resources and access control lists. Conflict detection approaches respectively based on colored petri net and description logic have been proposed, detection reports can be retrieved which consist of conflict locations, types and reasons.
+							</p>
+							<p>
+								<b>Responsibility:</b>
+								I am responsible for the system implementation of domain information extraction and conflict detection.
+							</p>
+							<p>
+								<b>Introduction:</b>
+								VisualADS stands for VISUAL Active Directory conflict detection System. It's a part of the KLBNT project. VisualADS is a MFC based software running under 
+								Windows. Its functionality is to collect the Active Directory data automatically and report the conflicts between permissions from a user or a group to a 
+								shared folder. VisualADS facilitates a lot of libraries and tools. It adopts ADSI (Active Directory Service Interface) API to collect the information of 
+								domain users, groups, computers and organizations automatically from the DC (Domain Controller). Then it uses the Netshare and WNet APIs to query the 
+								details of shared folders for every member computer within the domain. Here we get all the information like which user or group is permited or denied to 
+								which shared folder under a read, write or an execute action. We call this kind of permission a "policy". In order to visualize the policies, VisualADS 
+								utilizes a graphical library called E-XD++ to display the ograph in the MFC client area. There are so many nodes in the graph and it's not easy to arrange 
+								the positions of all nodes. We found that graphviz can parse the dot file and generate a picture in which all graphical elements are arranged very well. So 
+								we use graphviz to generate position for each element in our policy, like user, group, computer, shared folder and so on. To detect the conflicts between 
+								policies, we have a research on a detecting approach based on DL (Description Logic). Here in VisualADS, we use RacerPro as our DL reasoning engine. We 
+								write TBox and SWRL (Semantic Web Rule Language) rules mannually and put forward a algorithm which can transfer policies to ABox automatically. The we use 
+								socket to transmit TBox, ABox and SWRL rules into RacerPro engine. And nRQL (new Racer Query Language) is adopted to query the conflict details, like 
+								conflict positions, conflict reasons and so on.
+							</p>
+							<p>
+								<b>Languages used by VisualADS are:</b>
+								<br>C/C++
+							</p>
+							<p>
+								<b>Techniques used by VisualADS are:</b>
+								<br>MFC for UI
+								<br>BCGControlBar for UI
+								<br>Graphviz for UI
+								<br>E-XD++ for UI
+								<br>ADSI API for Active Directory information retrieval
+								<br>Network Share API for shared folder information retrieval
+								<br>WNet API for shared folder ACL retrieval
+								<br>Registry API for shared folder ACL retrieval
+								<br>Event Log API for remote log retrieval
+								<br>WMI API for system information retrieval
+								<br>Winsock API for communications with RacerPro
+							</p>
+							<p>
+								<b>Usage:</b>
+								<br>1) Copy VisualADS.exe from the "Debug" directory to the "dlls" directory, then execute it.
+								<br>2) Fill in the "DC Host or IP" with the Domain Controller hostname or IP address, fill in the "Admin Username" and "Admin Password" with the username and password of the domain administrator of Active Directory, usually named "Administrator". Click "Add Domain" if you want to retrieve multi-domain informatioon simultaneously. Then click "Log on" button and wait until the information be retrieved from the DC. Current states are displayed in the "Console" tab of "Output" window. When finished, the client area will display a graph which visualized the whole domain(s).
+								<br>3) Click "Start RacerPro" to start the RacerPro reasoning engine. After the window of RacerPro opens, click "Detect" to detect the policy conflicts between Active Directory policies. The "RacerPro TCP Cache" tab of "Output" window will show the TBox, SWRL rules and ABox communicated with RacerPro. And the "Conflict Detection Result" tab will display the conflict detection report. 
+							</p>
+							<p>
+								<b>Useful links:</b>
+								<br>Download source from GitHub
+								<br><a href="https://github.com/hsluoyz/VisualADS">https://github.com/hsluoyz/VisualADS</a>
+								<br>BCGControlBar official website
+								<br><a href="http://www.bcgsoft.com">http://www.bcgsoft.com</a>
+								<br>Graphviz official website
+								<br><a href="http://www.graphviz.org">http://www.graphviz.org</a>
+								<br>E-XD++ official website
+								<br><a href="http://extremediagram.com">http://extremediagram.com</a>
+								<br>Microsoft Windows 2003 Platform SDK download page
+								<br><a href="http://www.microsoft.com/en-us/download/details.aspx?id=12261">http://www.microsoft.com/en-us/download/details.aspx?id=12261</a>
+								<br>RacerPro official website
+								<br><a href="http://www.racer-systems.com">http://www.racer-systems.com</a>
+							</p>
+							<b>Pictures:</b>
+							<div align="center">
+							<br><img src="img/visualads_vrbac.png"></img>
+							<br><br>Fig.1. The concept model of Virtualized RBAC.
+							<br><br><br><br><img src="img/visualads_domc.png"></img>
+							<br><br>Fig.2. An example of Domain Conflict in multi-domain systems.
+							<br><br><br><br><img src="img/visualads_migc.png"></img>
+							<br><br>Fig.3. An example of Migrationn Conflict in multi-domain systems.
+							<br><br><br><br><img src="img/visualads_sodc.png"></img>
+							<br><br>Fig.4. An example of Separation of Duty Conflict in multi-domain systems.
+							<br><br><br><br><img src="img/visualads_adcq.png"></img>
+							<br><br>Fig.5. The ADCQ algorithm for querying ABox.
+							<br><br><br><br><img src="img/visualads_arch.png"></img>
+							<br><br>Fig.6. The architecture of the virtualized environment.
+							<br><br><br><br><img src="img/visualads_sketch.png"></img>
+							<br><br>Fig.7. The sketch map of the virtualized network.
+							<br><br><br><br><img src="img/visualads_diagrame.png"></img>
+							<br><br>Fig.8. The conflict detail diagram provided by VisualADS.
+							<br><br><br><br><img src="img/visualads_ui.png"></img>
+							<br><br>Fig.9. The main user interface of VisualADS.
+							</div>
+							<h5>
+								<a href="projects.htm">
+									Back
+								</a>
+							</h5>
+						</div>
+					</div>
+				</div>
+				<div class="span1">
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="span1">
+				</div>
+				<div class="span10">
+					<div class="footer">
+						<p class="text-left">
+							Copyright 2013. Veotax Luo / veotax.com
+						</p>
+					</div>
+				</div>
+				<div class="span1">
+				</div>
+			</div>
+		</div>
+	</body>
+
+</html>

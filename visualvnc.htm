@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			Veotax Luo - VisualVNC
+		</title>
+		<link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+		<link rel="stylesheet" href="bootstrap/css/bootstrap-responsive.css">
+		<link rel="stylesheet" href="stylesheets/style.css">
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<div class="span1">
+				</div>
+				<div class="span10">
+					<div class="page-header">
+						<h1>
+							Veotax Luo
+							<small>
+								A passionate generalist
+							</small>
+						</h1>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="span1">
+				</div>
+				<div class="span10">
+					<div class="tabbable tabs-right">
+						<ul class="nav nav-tabs">
+							<li>
+								<a href="projects.htm">
+									Projects
+								</a>
+							</li>
+							<li class="active">
+								<a href="visualvnc.htm">
+									VisualVNC
+								</a>
+							</li>
+							<li>
+								<a href="visualpsd.htm">
+									VisualPSD
+								</a>
+							</li>
+							<li>
+								<a href="visualads.htm">
+									VisualADS
+								</a>
+							</li>
+							<li>
+								<a href="penetrationtest.htm">
+									PenetrationTest
+								</a>
+							</li>
+							<li>
+								<a href="visualpcd.htm">
+									VisualPCD
+								</a>
+							</li>
+							<li>
+								<a href="atalanta.htm">
+									Atalanta
+								</a>
+							</li>
+							<li>
+								<a href="vpnhelper.htm">
+									VPN Helper
+								</a>
+							</li>
+							<li>
+								<a href="hidewizard.htm">
+									Hidewizard Crack
+								</a>
+							</li>
+						</ul>
+						<div class="tab-content">
+							<p class="lead">
+								I. Research & Engineering Projects
+							</p>
+							<h4>
+								1. VisualVNC
+							</h4>
+							<h5>
+								<a href="projects.htm">
+									Back
+								</a>
+							</h5>
+							<p>
+								Dec 2012 - Mar 2013
+							</p>
+							<p>
+								BUAA, Key Laboratory of Beijing Network Technology
+							</p>
+							<p>
+								<b>Project Description:</b>
+								The project mainly researched on the connectivity problem between virtual cloud platforms like VMware vSphere, Xen and virtual device simulation tools like GNS3, inlcuding designing the tunnel protocol and routing algorithm for data packets between virtual network and physical network. We implement a prototype system based on principles of VPN and NAT.
+							</p>
+							<p>
+								<b>Responsibility:</b>
+								I focus on the design work of protocol encapsulation and routing algorithm, the rule deployment scheme of virtualized network configuration and implementaion of routing driver in Windows written by NDIS programing.
+							</p>
+							<p>
+								<b>Introduction:</b>
+								VisualVNC stands for VISUAL Virtual Network Connection system. Its functionality is to map the real machines into the virtual hosts in GNS3 or eNSP. GNS3 
+								and eNSP are softwares that can simulate various devices such as routers, firewalls and switches which construct a virtual network. VisualVNC is composed of 
+								two parts, an application-level MFC controller side and an NDIS intermediate driver. All machines installing VisualVNC are divided into two categories: 
+								Center Machine and Margin Machine. Center Machine is the machine which runs GNS3 or eNSP. Margin Machine is the machine which is mapped to the node in the 
+								virtual network. The controller parses a rule file to decide which role the machine plays and sends instructions to the NDIS driver. The driver encapsulates 
+								and forwards the packets received or sent by the machine. We developed a protocol named VEP to encapsulate the orginal ethernet frame and sent the VEP 
+								packet through the real network. At the other side the packet is decapsulated and received by the machine.
+							</p>
+							<p>
+								<b>Languages used by VisualVNC are:</b>
+								<br>C/C++
+							</p>
+							<p>
+								<b>Techniques used by VisualVNC are:</b>
+								<br>MFC for UI
+								<br>BCGControlBar for UI
+								<br>Winsock API for communications between Center Machine and Margin Machine
+								<br>IPHelper API for network adapter information retrieval
+							</p>
+							<p>
+								<b>Languages used by VNCPassthru are:</b>
+								<br>C
+							</p>
+							<p>
+								<b>Techniques used by VNCPassthru are:</b>
+								<br>WDM Framework
+								<br>NDIS Framework
+								<br>Passthru example
+							</p>
+							<p>
+								<b>Usage:</b>
+								<br>1) Install VisualVNC in at least two machines, one for Center Machine and at least one for Margin Machine.
+								<br>2) Edit the file "Rules.txt" in the "data" directory of each VisualVNC copy. CIP means Center IP, set the outgoing IP of Center Machine to it. VIP means the IP of Margin Machine in the virtualized network, you modify it according to your virtualized network design. PIP means the IP of Margin Machine in the phisical network, set the outgoing IP of Margin Machine to it. IMAC means the internal adapters of Center Machine binded with GNS3 or eNSP. You bind a IMAC adapter with a Margin Machine, so according to your bindings, you will know which one is the corresponding IMAC adapter. NIP means the ignored IP address, VisualVNC will not redirect a packet with the NIP.
+								<br>3) Copy VisualVNC.exe from the "Debug" directory to the "dlls" directory, then execute it.
+								<br>4) For Center Machine: Click the "Load Driver" button, the VNCPassthru driver will be loaded, you can check alive using the "Check Driver" button. Button "Read Rules" can display the content of "Rule.txt", which dosen't matter much. You must configure your IP to CIP in advance, and use "Confirm Status" to confirm your Center Machine state by watching the "Run Status" edit box. Then clicking "Write Rules and Start Driver" will write rules to VNCPassthru driver and start forwarding. you can view the debug information by using WinDbg. Detailed information for each packet is displayed. To stop the VisualVNC function, you first click "Stop Driver and Clear Rules", then click "Unload Driver", this will help you undo all previous steps.
+								<br>5) For Margin Machine: The operation difference with Center Machine's is that you must configure your IP to PIP in advance, after clicking "Write Rules and Start Driver", VisualVNC will automatically help you change your IP from PIP to VIP. Clicking "Stop Driver and Clear Rules" will revert to its original state.
+								<br>6) There're also some other tabs. Margin tab helps the Margin Machine manage its VIP and PIP, change MTU (because our protocol add 36 bytes to orginal packet, so the whole ethernet frame could have exceeds the link MTU, use the "Change MTU" button to change MTU to a smaller number automatically.) and retrieve information of adapters. Network tab can change IP and execute ARP query. Connection tab is a TCP function, I planed to distribute the "Rules.txt" file using this TCP function, but haven't finished yet. Debug tab is a test-case function, you can use it to send an arbitrary packet, using VEP protocol (our tunnel protocol) or not.
+							</p>
+							<p>
+								<b>Useful links:</b>
+								<br>Download source from GitHub
+								<br><a href="https://github.com/hsluoyz/VisualVNC">https://github.com/hsluoyz/VisualVNC</a>
+								<br>BCGControlBar official website
+								<br><a href="http://www.bcgsoft.com">http://www.bcgsoft.com</a>
+								<br>Microsoft Windows Driver Kit 7.1.0 download page
+								<br><a href="http://www.microsoft.com/en-us/download/details.aspx?id=11800">http://www.microsoft.com/en-us/download/details.aspx?id=11800</a>
+							</p>
+							<b>Pictures:</b>
+							<div align="center">
+							<br><img src="img/visualvnc_topo.png"></img>
+							<br><br>Fig.1. The topology of virtualized network.
+							<br><br><br><br><img src="img/visualvnc_arch.png"></img>
+							<br><br>Fig.2. The archtecture of the TCP/IP network, our tunnel protocol uses only data link layer and IP layer.
+							<br><br><br><br><img src="img/visualvnc_rules.png"></img>
+							<br><br>Fig.3. The rule file used by VisualVNC, There are two kinds of rules: core rules and mapping rules.
+							<br><br><br><br><img src="img/visualvnc_config_driver.png"></img>
+							<br><br>Fig.4. The UI of driver configuration.
+							<br><br><br><br><img src="img/visualvnc_config_adapter.png"></img>
+							<br><br>Fig.5. The UI of MTU and adapter configuration.
+							<br><br><br><br><img src="img/visualvnc_config_ip.png"></img>
+							<br><br>Fig.6. The UI of IP configuration.
+							<br><br><br><br><img src="img/visualvnc_config_role.png"></img>
+							<br><br>Fig.7. The UI of rule, server and client configuration.
+							<br><br><br><br><img src="img/visualvnc_ui.png"></img>
+							<br><br>Fig.8. The UI of VisualVNC.
+							<br><br><br><br><img src="img/visualvnc_gns3.png"></img>
+							<br><br>Fig.9. The virtualized network of GNS3.
+							<br><br><br><br><img src="img/visualvnc_ensp.png"></img>
+							<br><br>Fig.10. The virtualized network of eNSP.
+							<br><br><br><br><img src="img/visualvnc_packet.png"></img>
+							<br><br>Fig.11. The packet stream captured and forwarded by VisualVNC
+							</div>
+							<h5>
+								<a href="projects.htm">
+									Back
+								</a>
+							</h5>
+						</div>
+					</div>
+				</div>
+				<div class="span1">
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="span1">
+				</div>
+				<div class="span10">
+					<div class="footer">
+						<p class="text-left">
+							Copyright 2013. Veotax Luo / veotax.com
+						</p>
+					</div>
+				</div>
+				<div class="span1">
+				</div>
+			</div>
+		</div>
+	</body>
+
+</html>
